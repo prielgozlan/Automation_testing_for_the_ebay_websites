@@ -1,7 +1,7 @@
 package magento_demo.tests;
 
 import magento_demo.pages.createProfile;
-import magento_demo.seleniumBase;
+import projectEbayTests.seleniumBase;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class createProfileTest {

@@ -1,6 +1,6 @@
 package projectEbayTests.test;
 
-import magento_demo.seleniumBase;
+import projectEbayTests.seleniumBase;
 import org.openqa.selenium.chrome.ChromeDriver;
 import projectEbayTests.page.AddToCart;
 
@@ -15,6 +15,7 @@ public class AddToCartTest {
         String name = scanner.nextLine();
         seleniumBase base = new seleniumBase();
         ChromeDriver driver = base.seleniumInit("https://www.ebay.com/sch/i.html?_from=R40&_trksid=p4432023.m570.l1313&_nkw="+name+"&_sacat=0");
+//        ChromeDriver driver = base.seleniumInit("https://www.ebay.com/sch/i.html?_from=R40&_trksid=p4432023.m570.l1313&_nkw=chair&_sacat=0");
         AddToCart AddToCart = new  AddToCart(driver);
 
         AddToCart.addItemToCard();
@@ -23,7 +24,11 @@ public class AddToCartTest {
 
 
         sleep(3000);
-        base.seleniumClose(driver);
+
+
+        driver.quit();
+
+
 
 
 

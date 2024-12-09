@@ -1,6 +1,6 @@
 package projectEbayTests.test;
 
-import magento_demo.seleniumBase;
+import projectEbayTests.seleniumBase;
 import org.openqa.selenium.chrome.ChromeDriver;
 import projectEbayTests.page.searchItem;
 

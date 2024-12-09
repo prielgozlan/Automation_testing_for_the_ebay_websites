@@ -14,12 +14,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
+import static java.lang.Thread.sleep;
+
 public class AddToCart {
 
     @FindBy(className = "s-item__title")
     List<WebElement> pushToItem;
-    @FindBy(id = "atcBtn_btn_1")
-    WebElement addPriceToCard;
+    @FindBy(className = "item-price")
+    WebElement priceItem;
+    @FindBy(className = "logistics-costs")
+    WebElement priceShipping;
+    @FindBy(className = "total-row")
+    WebElement allCost;
 
 
 
@@ -30,7 +36,7 @@ public class AddToCart {
     }
 
 
-    public void addItemToCard(){
+    public void addItemToCard() throws InterruptedException {
         for(WebElement push : pushToItem){
             String text = push.getText();
 
@@ -39,7 +45,42 @@ public class AddToCart {
                 break;
             }
         }
+        for (String handle : driver.getWindowHandles()) {
+            driver.switchTo().window(handle);
+        }
 
+        WebElement addCard2 = driver.findElement(By.linkText("Add to cart"));
+        addCard2.click();
+        String price = priceItem.getText();
+        String number = price.replaceAll("[^\\d.]", "");
+        double numberAsDouble = Double.parseDouble(number);
+
+        String priceShippingItem  = priceShipping.getText();
+        String numberShipping = priceShippingItem.replaceAll("[^\\d.]", "");
+        double numberAsDoubleShipping = Double.parseDouble(numberShipping);
+
+
+        WebElement priceAll = driver.findElement(By.cssSelector("div[data-test-id='SUBTOTAL'] > span.text-display-span > span > span"));
+        String numAll = priceAll.getText();
+        String SumAll = numAll.replaceAll("[^\\d.]", "");
+        double numberAsDoubleAll = Double.parseDouble(SumAll);
+
+
+        if (numberAsDoubleAll == numberAsDoubleShipping+numberAsDouble){
+            System.out.println("The price is the same.");
+        }
+        else {
+            System.out.println("The price is not the same.");
+        }
+
+
+
+
+
+
+
+
+        sleep(3000);
 
     }
 }
