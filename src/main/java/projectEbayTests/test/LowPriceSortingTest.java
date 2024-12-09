@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 import static java.lang.Thread.sleep;
 
-public class LowPriceSorting {
+public class LowPriceSortingTest {
     public static void main(String[] args) throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your item that you search for got the price less :");
