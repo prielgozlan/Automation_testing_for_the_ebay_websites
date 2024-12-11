@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Objects;
 
 import static java.lang.Thread.sleep;
 
@@ -54,11 +55,16 @@ public class AddToCart {
         String price = priceItem.getText();
         String number = price.replaceAll("[^\\d.]", "");
         double numberAsDouble = Double.parseDouble(number);
-
+        double numberAsDoubleShipping;
         String priceShippingItem  = priceShipping.getText();
-        String numberShipping = priceShippingItem.replaceAll("[^\\d.]", "");
-        double numberAsDoubleShipping = Double.parseDouble(numberShipping);
+        if(Objects.equals(priceShippingItem, "Free shipping")){
+            numberAsDoubleShipping = 0;
+        }
+        else {
+            String numberShipping = priceShippingItem.replaceAll("[^\\d.]", "");
+             numberAsDoubleShipping = Double.parseDouble(numberShipping);
 
+        }
 
         WebElement priceAll = driver.findElement(By.cssSelector("div[data-test-id='SUBTOTAL'] > span.text-display-span > span > span"));
         String numAll = priceAll.getText();
