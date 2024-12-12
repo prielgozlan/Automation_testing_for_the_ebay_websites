@@ -1,6 +1,5 @@
 package projectEbayTests.page;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,9 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
-import java.util.Objects;
 
-public class searchItem {
+public class searchItemPage {
 
     @FindBy(id = "gh-ac")
     WebElement search;
@@ -22,7 +20,7 @@ public class searchItem {
 
     private ChromeDriver driver ;
 
-    public searchItem (ChromeDriver driver){
+    public searchItemPage(ChromeDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver , this);
     }

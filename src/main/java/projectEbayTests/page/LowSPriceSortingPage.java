@@ -1,7 +1,6 @@
 package projectEbayTests.page;
 
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,12 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class LowSPriceSorting {
+public class LowSPriceSortingPage {
 
 
 
     private ChromeDriver driver;
-    public LowSPriceSorting(ChromeDriver driver){
+    public LowSPriceSortingPage(ChromeDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver , this);
     }

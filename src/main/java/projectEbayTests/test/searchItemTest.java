@@ -2,7 +2,7 @@ package projectEbayTests.test;
 
 import projectEbayTests.seleniumBase;
 import org.openqa.selenium.chrome.ChromeDriver;
-import projectEbayTests.page.searchItem;
+import projectEbayTests.page.searchItemPage;
 
 import java.util.Scanner;
 
@@ -15,7 +15,7 @@ public class searchItemTest {
         String name = scanner.nextLine();
         seleniumBase base = new seleniumBase();
         ChromeDriver driver = base.seleniumInit("https://www.ebay.com/");
-        searchItem searchItem = new  searchItem(driver);
+        searchItemPage searchItem = new searchItemPage(driver);
         searchItem.searchNameItem(name);
 
 

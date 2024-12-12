@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class createAccount {
+public class createAccountPage {
 
     @FindBy(id = "firstname")
      WebElement firstname;
@@ -22,7 +22,7 @@ public class createAccount {
     private ChromeDriver driver;
 
 
-    public createAccount(ChromeDriver driver){
+    public createAccountPage(ChromeDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver , this);
     }

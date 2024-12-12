@@ -2,7 +2,7 @@ package projectEbayTests.test;
 
 import projectEbayTests.seleniumBase;
 import org.openqa.selenium.chrome.ChromeDriver;
-import projectEbayTests.page.LowSPriceSorting;
+import projectEbayTests.page.LowSPriceSortingPage;
 
 import java.util.Scanner;
 
@@ -14,9 +14,8 @@ public class LowPriceSortingTest {
         System.out.print("Enter your item that you search for got the price less :");
         String name = scanner.nextLine();
         seleniumBase base = new seleniumBase();
-
         ChromeDriver driver = base.seleniumInit("https://www.ebay.com/sch/i.html?_from=R40&_nkw="+name+"&_sacat=0&_sop=15");
-        LowSPriceSorting sortPriceChip = new LowSPriceSorting(driver);
+        LowSPriceSortingPage sortPriceChip = new LowSPriceSortingPage(driver);
         sortPriceChip.sortItem();
 
 
