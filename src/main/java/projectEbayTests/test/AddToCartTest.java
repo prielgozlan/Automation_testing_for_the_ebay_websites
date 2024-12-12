@@ -17,6 +17,7 @@ public class AddToCartTest {
         ChromeDriver driver = base.seleniumInit("https://www.ebay.com/sch/i.html?_from=R40&_trksid=p4432023.m570.l1313&_nkw="+name+"&_sacat=0");
         AddToCartPage AddToCart = new AddToCartPage(driver);
 
+
         AddToCart.addItemToCard();
 
 
