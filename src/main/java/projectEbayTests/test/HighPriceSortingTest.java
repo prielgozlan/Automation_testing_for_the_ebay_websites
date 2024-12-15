@@ -17,16 +17,6 @@ public class HighPriceSortingTest {
         ChromeDriver driver = base.seleniumInit("https://www.ebay.com/sch/i.html?_from=R40&_nkw="+name+"&_sacat=0&_sop=16");
         HighPriceSortingPage HighPriceSorting = new HighPriceSortingPage(driver);
         HighPriceSorting.sortItem();
-
-
-
-
-        sleep(3000);
-
-
-
-
-
         base.seleniumClose(driver);
     }
 

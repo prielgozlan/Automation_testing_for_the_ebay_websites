@@ -17,15 +17,6 @@ public class LowPriceSortingTest {
         ChromeDriver driver = base.seleniumInit("https://www.ebay.com/sch/i.html?_from=R40&_nkw="+name+"&_sacat=0&_sop=15");
         LowSPriceSortingPage sortPriceChip = new LowSPriceSortingPage(driver);
         sortPriceChip.sortItem();
-
-
-
-        sleep(3000);
-
-
-
-
-
         base.seleniumClose(driver);
     }
 }

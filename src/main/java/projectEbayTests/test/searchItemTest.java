@@ -17,16 +17,6 @@ public class searchItemTest {
         ChromeDriver driver = base.seleniumInit("https://www.ebay.com/");
         searchItemPage searchItem = new searchItemPage(driver);
         searchItem.searchNameItem(name);
-
-
-
-
-        sleep(3000);
-
-
-
-
-
         base.seleniumClose(driver);
     }
 }

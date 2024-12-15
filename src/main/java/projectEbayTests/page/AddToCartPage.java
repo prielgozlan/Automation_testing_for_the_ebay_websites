@@ -1,15 +1,16 @@
 package projectEbayTests.page;
 
+import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
-import static java.lang.Thread.sleep;
 
 public class AddToCartPage {
 
@@ -22,15 +23,11 @@ public class AddToCartPage {
     @FindBy(className = "total-row")
     WebElement allCost;
 
-
-
     private ChromeDriver driver;
     public AddToCartPage(ChromeDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver , this);
     }
-
-
     public void addItemToCard() throws InterruptedException {
         for(WebElement push : pushToItem){
             String text = push.getText();
@@ -59,28 +56,16 @@ public class AddToCartPage {
              numberAsDoubleShipping = Double.parseDouble(numberShipping);
 
         }
-
         WebElement priceAll = driver.findElement(By.cssSelector("div[data-test-id='SUBTOTAL'] > span.text-display-span > span > span"));
         String numAll = priceAll.getText();
         String SumAll = numAll.replaceAll("[^\\d.]", "");
         double numberAsDoubleAll = Double.parseDouble(SumAll);
-
-
+        boolean isPass = false;
         if (numberAsDoubleAll == numberAsDoubleShipping+numberAsDouble){
-            System.out.println("The price is the same.");
+            Assert.assertTrue("The price is the same." , isPass);
         }
         else {
-            System.out.println("The price is not the same.");
+            Assert.assertTrue("The price is not the same." , isPass);
         }
-
-
-
-
-
-
-
-
-        sleep(3000);
-
     }
 }

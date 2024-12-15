@@ -44,15 +44,5 @@ public class searchItemPage {
         if (findItems.size() == 2) {
             System.out.println(itemNotFind.getText()+ " " + name);
         }
-
-
-
-
-
-
     }
-
-
-
-
 }

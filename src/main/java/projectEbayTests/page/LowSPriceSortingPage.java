@@ -1,6 +1,7 @@
 package projectEbayTests.page;
 
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,12 +22,8 @@ public class LowSPriceSortingPage {
         PageFactory.initElements(driver , this);
     }
     public void sortItem(){
-
-
         List<WebElement> items = driver.findElements(By.className("s-item__price"));
         List<WebElement> itemsSecond = driver.findElements(By.className("s-item__shipping"));
-
-
         List<Double> pricesOfItem = new ArrayList<>();
         List<Double> pricesOfShipping = new ArrayList<>();
         List<Double> pricesOfShippingAndItem = new ArrayList<>();
@@ -73,8 +70,7 @@ public class LowSPriceSortingPage {
                 System.out.println("the sort wrong, numFirst :" + numFirst  + "  better from the numSecond "+ numSecond );
             }
 
-//           Assert.assertTrue("the sort wrong, numSecond :" + numSecond + "  better from the numFirst " + numFirst, isPass);
-
+           Assert.assertTrue("the sort wrong, numSecond :" + numSecond + "  better from the numFirst " + numFirst, isPass);
 
         }
     }

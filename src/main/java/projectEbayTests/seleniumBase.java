@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 
+import static java.lang.Thread.sleep;
+
 public class seleniumBase {
     public   ChromeDriver seleniumInit (String url) throws InterruptedException {
         System.out.println("Starting...");
@@ -17,7 +19,7 @@ public class seleniumBase {
         ChromeDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(url);
-//        sleep(3000);
+        sleep(3000);
         return driver;
 
     }

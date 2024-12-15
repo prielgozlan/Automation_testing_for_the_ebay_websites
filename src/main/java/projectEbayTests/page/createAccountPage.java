@@ -28,7 +28,6 @@ public class createAccountPage {
     }
 
     public void AccountNew(){
-
         firstname.click();
         firstname.sendKeys("priel");
         lastname.click();
