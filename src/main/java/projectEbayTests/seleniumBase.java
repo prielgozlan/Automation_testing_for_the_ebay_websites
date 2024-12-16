@@ -19,7 +19,7 @@ public class seleniumBase {
         ChromeDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(url);
-        sleep(3000);
+//        sleep(3000);
         return driver;
 
     }
