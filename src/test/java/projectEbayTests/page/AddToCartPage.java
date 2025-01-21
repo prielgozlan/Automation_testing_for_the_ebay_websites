@@ -1,14 +1,11 @@
 package projectEbayTests.page;
 
-import org.junit.Assert;
-import org.openqa.selenium.Alert;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -62,10 +59,10 @@ public class AddToCartPage {
         double numberAsDoubleAll = Double.parseDouble(SumAll);
         boolean isPass = false;
         if (numberAsDoubleAll == numberAsDoubleShipping+numberAsDouble){
-            Assert.assertTrue("The price is the same." , isPass);
+            System.out.println("The price is the same.");
         }
         else {
-            Assert.assertTrue("The price is not the same." , isPass);
+            assertTrue(isPass , "The price is not the same.");
         }
     }
 }

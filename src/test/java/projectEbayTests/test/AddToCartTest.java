@@ -3,10 +3,8 @@ package projectEbayTests.test;
 import projectEbayTests.seleniumBase;
 import org.openqa.selenium.chrome.ChromeDriver;
 import projectEbayTests.page.AddToCartPage;
-
 import java.util.Scanner;
 
-import static java.lang.Thread.sleep;
 
 public class AddToCartTest {
     public static void main(String[] args) throws InterruptedException {

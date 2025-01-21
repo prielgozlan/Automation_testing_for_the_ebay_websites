@@ -1,27 +1,24 @@
 package projectEbayTests.page;
 
-
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class LowSPriceSortingPage {
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
+public class HighPriceSortingPage {
 
     private ChromeDriver driver;
-    public LowSPriceSortingPage(ChromeDriver driver){
+    public HighPriceSortingPage(ChromeDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver , this);
     }
-    public void sortItem(){
+
+    public void sortItem() {
         List<WebElement> items = driver.findElements(By.className("s-item__price"));
         List<WebElement> itemsSecond = driver.findElements(By.className("s-item__shipping"));
         List<Double> pricesOfItem = new ArrayList<>();
@@ -51,32 +48,21 @@ public class LowSPriceSortingPage {
             }
 
         }
-
-
         for (int i = 0 ; i < pricesOfItem.size() ; i++){
             double num = pricesOfItem.get(i) + pricesOfShipping.get(i);
             pricesOfShippingAndItem.add(num);
         }
-
-
         for (int i = 0; i < pricesOfShippingAndItem.size()-1; i++) {
             boolean isPass = true;
             double numFirst = pricesOfShippingAndItem.get(i);
             double numSecond = pricesOfShippingAndItem.get(i + 1);
 
-            if (numFirst > numSecond) {
+            if (numFirst < numSecond) {
 
                 isPass = false;
-                System.out.println("the sort wrong, numFirst :" + numFirst  + "  better from the numSecond "+ numSecond );
+                System.out.println("the sort wrong, numSecond :" + numSecond + "  better from the numFirst " + numFirst);
             }
-
-           Assert.assertTrue("the sort wrong, numSecond :" + numSecond + "  better from the numFirst " + numFirst, isPass);
-
+            assertTrue(isPass , "the sort wrong, numSecond :" + numSecond + "  better from the numFirst " + numFirst);
         }
     }
-
-
-
-
-
 }

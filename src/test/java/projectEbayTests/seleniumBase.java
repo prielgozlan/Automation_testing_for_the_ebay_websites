@@ -3,10 +3,9 @@ package projectEbayTests;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 import java.util.concurrent.TimeUnit;
 
-import static java.lang.Thread.sleep;
+
 
 public class seleniumBase {
     public   ChromeDriver seleniumInit (String url) throws InterruptedException {
@@ -19,7 +18,6 @@ public class seleniumBase {
         ChromeDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(url);
-//        sleep(3000);
         return driver;
 
     }
